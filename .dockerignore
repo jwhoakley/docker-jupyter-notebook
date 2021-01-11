@@ -1,0 +1,7 @@
+.git
+.cache
+.jupyter
+.jupyter/jupyter_notebook_config.json
+.jupyter/jupyter_notebook_config.py
+docker-compose.yml
+jupyter-notebook-stack.yml
