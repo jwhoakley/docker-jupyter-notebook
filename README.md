@@ -21,3 +21,7 @@ Run with:
 
 	docker stack deploy -c jupyter-notebook-stack.yml jupyter
 
+## Work to do
+
+Setup HTTPS certificate and Traefik to publish the service against a DNS name rather than IP address
+https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#notebook-public-server
