@@ -1,0 +1,24 @@
+---
+version: '3.8'
+
+services:
+  jupyter-notebook:
+    image: jwhoakley/jupyter-notebook:0.1
+    ports:
+      - 8888:8888
+    restart: unless-stopped
+    secrets:
+      - source: jupyter_notebook_pswd
+        target: "/root/.jupyter/jupyter_notebook_config.json"
+        mode: 0600
+      - source: jupyter_notebook_conf
+        target: "/root/.jupyter/jupyter_notebook_config.py"
+        mode: 0644
+    volumes:
+      - /volumes/jupyter/notebooks:/notebooks
+
+secrets:
+  jupyter_notebook_pswd:
+    file: "./.jupyter/jupyter_notebook_config.json"
+  jupyter_notebook_conf:
+    file: "./.jupyter/jupyter_notebook_config.py"
